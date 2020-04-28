@@ -30,7 +30,7 @@ module Jekyll
         environment['contentblocks'] ||= {}
         environment['contentblocks'][content_block_name] ||= []
       end
-
+      
       def converted_content(block_content, context)
         converters = context.environments.first['converters']
         Array(converters).reduce(block_content) do |content, converter|
