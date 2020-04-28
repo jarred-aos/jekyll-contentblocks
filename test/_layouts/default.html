@@ -25,6 +25,19 @@
       </div>
     {% endifnothascontent %}
 
+    {% ifhascontent multi %}
+      Individually, there should be three sections here   	
+
+      {% for section in page.contentblocks.multi %}
+        Section {% section.data.number %}:
+        {% section.content %}
+      {% endfor %}
+
+      And all three should appear here:
+
+      {% contentblock multi %}
+    {% endifhascontent %}
+
     {% ifhascontent footer %}
       {% contentblock footer %}
     {% endifhascontent %}
